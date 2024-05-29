@@ -11,8 +11,10 @@ import { auth } from "@/auth";
 
 export const metadata = {
   title: "BMR Recruitment Ltd",
-  description: "One Stop for your job search",
+  description: "Explore thousands of job listings on our top job board. Find employment opportunities across various industries including IT, healthcare, finance, and more. Start your job search today!",
+  keywords: "job listings, job search, job board, employment opportunities, careers, job openings, find jobs, work opportunities, IT jobs, healthcare jobs, finance jobs, remote jobs, part-time jobs, full-time jobs, internship opportunities, entry-level jobs"
 };
+
 
 export default async function RootLayout({ children }) {
   const session = await auth();

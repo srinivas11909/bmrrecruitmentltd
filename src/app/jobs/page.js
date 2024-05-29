@@ -1,5 +1,12 @@
 import { Suspense } from "react";
 import Card from "@/components/job/Card"
+export const metadata = {
+   title: "Job | Find Your Next Job Today | BMR Recruitment Ltd",
+   description: "Explore thousands of job listings on our top job board. Find employment opportunities across various industries including IT, healthcare, finance, and more. Start your job search today!",
+   keywords: "job listings, job search, job board, employment opportunities, careers, job openings, find jobs, work opportunities, IT jobs, healthcare jobs, finance jobs, remote jobs, part-time jobs, full-time jobs, internship opportunities, entry-level jobs"
+};
+
+
 export default async function Jobs(){
    const  fetchJobs = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/jobs`, {next: {revalidate: 10}})
