@@ -46,10 +46,8 @@ export default function JobForm(){
       };
 
     const onSubmit = async (formData) => {
-        console.log(formData)
         formData.description = editorContent
         formData.slug = generateUrl(formData.title)
-        console.log(formData)
         try{
             //const savedJob  = await addJob(formData)
             const savedJob = await createTask(formData)

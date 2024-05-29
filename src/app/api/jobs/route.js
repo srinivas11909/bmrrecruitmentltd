@@ -17,7 +17,6 @@ export async function GET() {
 }
 
 export async function POST(request) {
-  console.log(request)
     try {
       const body = await request.json();
       const newJob = new Job(body);

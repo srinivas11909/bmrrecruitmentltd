@@ -14,7 +14,6 @@ function renderMarkdownToHTML(markdown) {
 
 export default function JobDetail(props){
     const {data} = props
-    console.log(data)
     const markup =renderMarkdownToHTML(data[0]?.["description"])
     const dateRender = (date) => {
        const dateParts = date.slice(0, 10).split('-'); // Extract year, month, and day parts

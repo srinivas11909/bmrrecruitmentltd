@@ -5,7 +5,6 @@ import TextEditor from "../admin/TextEditor";
 import { useForm } from 'react-hook-form';
 import { useRouter } from "next/navigation";
 export default function EditJob({data, onClose, params}) {
-    console.log(data)
     const { register, handleSubmit, setValue, formState: { errors } } = useForm();
     const [editorContent, setEditorContent] = useState(data.description);
     const handleEditorChange = (content) => {
@@ -19,7 +18,6 @@ export default function EditJob({data, onClose, params}) {
       }, [data, setValue]);
       //const params = useParams();
       const router = useRouter();  
-      console.log(params)
     const onSubmit = async (formData) => {
         const fullData = {
             ...formData,

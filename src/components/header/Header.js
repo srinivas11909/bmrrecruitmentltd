@@ -54,7 +54,7 @@ export default function Headers(props){
         <div className="bg-white shadow-md transition-all z-50">
           <header className={`main-header inset-x-0 top-0 z-50 bg-white ${isSticky ? ' fixed animated fadeIn top-0 border': ''}`}>
               <nav className="flex item-center justify-between items-center p-6 bg-white lg:px-12 relative">
-                 <a href="/" className={`text-sm ${isSticky ? 'text-grey-500' : 'text-grey-500'} uppercase font-bold`}>
+                 <a href="/" className={`text-sm text-grey-500 uppercase font-bold`}>
                     <span>BMR Recruitment Ltd</span>
                  </a>
                  <div className="flex lg:hidden">

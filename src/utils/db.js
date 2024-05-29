@@ -12,7 +12,6 @@ const conn = {
     const db = await connect(
       process.env.MONGODB_URI || "mongodb://localhost:3000/nextjs"
     );
-    // console.log(db.connection.db.databaseName);MWLxJIdXvIGbrXRk
     conn.isConnected = db.connections[0].readyState;
   }
   

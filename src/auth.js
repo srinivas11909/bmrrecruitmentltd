@@ -20,7 +20,6 @@ export const {
                 password: { label: "Password", type: "password" },
             },
             async authorize(credentials) {
-                console.log(credentials)
                 if (credentials === null) return null;
                 const user = { id: 1, name: "admin" };
 

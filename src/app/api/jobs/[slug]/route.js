@@ -28,12 +28,9 @@ export async function GET(req, {params}){
 }
 
 export async function PUT(request, { params }) {
-  console.log("data dd")
-  console.log(params)
     const body = await request.json();
     const { title, description, location, jobType, category } = body;
     const newSlug = slugify(title);
-    console.log(newSlug)
     dbConnect();
   
     try {
@@ -60,8 +57,6 @@ export async function PUT(request, { params }) {
 }
 
 export async function DELETE(request, { params }) {
-
-  console.log(params)
     dbConnect();
     try {
         const jobDeleted = await Job.deleteOne(params);

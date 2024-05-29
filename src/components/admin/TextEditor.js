@@ -13,7 +13,6 @@ const TextEditor = ({content='', onContentChange}) => {
     //const ReactQuill = dynamic(() => import('react-quill'), { ssr: false }); // Use dynamic import
     const [editorValue, setEditorValue] = useState(content);
     const handleEditorChange = (content) => {
-        console.log(content)
         setEditorValue(content);
         onContentChange(content); // Call the onChange handler with the updated content
   };

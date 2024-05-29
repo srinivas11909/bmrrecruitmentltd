@@ -31,7 +31,6 @@ export default function Card({isAdmin = false, ...props}){
       return formattedDate
    }
    const deleteJob = async (slug) => {
-      console.log("deleteJob", slug)
       if (window.confirm("Are you sure you want to delete this Job?")) {
          try {
            const res = await fetch(`/api/jobs/${slug}`, {
@@ -46,7 +45,6 @@ export default function Card({isAdmin = false, ...props}){
        }
    }
    const updateJobDetails = () => {
-     console.log("updateJob")
      setIsModalOpen(true);
    }
     return <>

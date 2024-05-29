@@ -7,9 +7,6 @@ import { signIn, signOut } from "@/auth";
 
 
  export const addJob = async (formData) => {
-
-   console.log("2")
-   console.log(formData)
    try {
     dbConnect()
     const newJob = new Job(formData);
@@ -27,7 +24,6 @@ export async function doLogout() {
 }
 
 export async function dbConnectForLogin(formData) {
-  console.log("formData", formData);
 
   try {
     const response = await signIn("credentials", {
@@ -35,6 +31,9 @@ export async function dbConnectForLogin(formData) {
       password: formData.get("password"),
       redirect: false,
     });
+    if(!response.ok){
+      console.error(response.error);
+    }
     return response;
   } catch (err) {
     throw err;
