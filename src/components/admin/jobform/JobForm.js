@@ -30,7 +30,7 @@ export default function JobForm(){
     const router = useRouter();
     const createTask = async (formData) => {
         try {
-          await fetch("http://localhost:3000/api/jobs", {
+          await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/jobs`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

@@ -7,6 +7,7 @@ export async function GET() {
     await dbConnect();
     try{
         const jobs = await Job.find();
+        revalidatePath("/admin/view-all-pages")
         return NextResponse.json(jobs);
     }catch(error){
         return NextResponse.json(error.message, {

@@ -40,7 +40,7 @@ export default function EditJob({data, onClose, params}) {
     }
     const updateJob = async (formData) => {
         try {
-          await fetch(`http://localhost:3000/api/jobs/${data.slug}`, {
+          await fetch(`${rocess.env.NEXT_PUBLIC_API_BASE_URL}/api/jobs/${data.slug}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",

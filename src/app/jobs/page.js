@@ -1,7 +1,7 @@
 import Card from "@/components/job/Card"
 export default async function Jobs(){
    const  fetchJobs = async () => {
-    const res = await fetch("http://localhost:3000/api/jobs", {cache: "no-store"})
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/jobs`, {cache: "no-store"})
     console.log(res)
     const jobs = await res.json()
     return jobs

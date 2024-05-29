@@ -3,7 +3,7 @@ export default async function JobDetails({params}) {
    
     const getSingleJob = async () => {
 
-        const res = await fetch(`http://localhost:3000/api/jobs/${params.slug}`) 
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/jobs/${params.slug}`) 
         console.log(res)
         const jobDetail = await res.json()
         return jobDetail
