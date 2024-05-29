@@ -21,6 +21,7 @@ export default function Navigation({sticky, screenSize,isOpen, onClick}){
         }
     ] 
     const router = usePathname();
+    console.log(router)
 
     return <>
        {/* <div className="top-header flex justify-end p-2 lg:px-12">
@@ -29,10 +30,10 @@ export default function Navigation({sticky, screenSize,isOpen, onClick}){
             </div>
           </div>  */}
        <div className="hidden lg:flex lg:gap-x-12">
-         {navItems.map((item, index) => <Link href={item.path} className={`text-base uppercase text-grey-500 ${router === item.path ? " text-blue-500" : ""}  font-normal leading-6`} key={index}>{item.linkName}</Link> )}
+         {navItems.map((item, index) => <Link href={item.path} className={`text-base uppercase  ${router === item.path ? " text-blue-500" : "text-gray-700"}  font-normal leading-6`} key={index}>{item.linkName}</Link> )}
        </div>
        {isOpen && (screenSize == "mobile" || screenSize == "tablet" ) ? <div className="menu z-10">
-          {navItems.map((item, index) => <Link href={item.path} className={`text-base uppercase text-grey-500 ${router === item.path ? " text-blue-500" : ""}  font-normal leading-6`} key={index} onClick={onClick}>{item.linkName}</Link> )}
+          {navItems.map((item, index) => <Link href={item.path} className={`text-base uppercase  ${router === item.path ? " text-blue-500" : "text-gray-700"}  font-normal leading-6`} key={index} onClick={onClick}>{item.linkName}</Link> )}
         </div> : null}
 
      </>

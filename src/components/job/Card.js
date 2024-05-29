@@ -48,7 +48,7 @@ export default function Card({isAdmin = false, ...props}){
      setIsModalOpen(true);
    }
     return <>
-       <div className="border boorder-grey-300 rounded-md shadow p-3 bg-gray-100 relative min-h-80">
+       <div className="border boorder-gray-300 rounded-md shadow p-3 bg-gray-100 relative min-h-80">
           <div className="">
             <Link href={`/jobs/${props.data.slug}`} className="text-base text-black font-semibold">{props.data.title} </Link>
           </div>
@@ -57,20 +57,20 @@ export default function Card({isAdmin = false, ...props}){
                 <p className="text-sm text-gray-600"><strong>Location :</strong> {props.data.location}</p>
              </div>
              <div className="">
-                <p className="capitalize text-sm"><strong>Division :</strong> {props.data.category.join(", ")}</p>
+                <p className="capitalize text-sm text-gray-600"><strong>Division :</strong> {props.data.category.join(", ")}</p>
              </div>
              <div className="">
-                <p className="text-sm"><strong>Type :</strong> {props.data.jobType}</p>
+                <p className="text-sm text-gray-600"><strong>Type :</strong> {props.data.jobType}</p>
              </div>
           </div>
           <div className="desc mb-3" style={{height: "96px"}}>
-             <div dangerouslySetInnerHTML={markup} className="text-base truncate-text"></div>
+             <div dangerouslySetInnerHTML={markup} className="text-base truncate-text text-gray-600"></div>
           </div>
           <div className="flex w-full absolute bottom-16">
             <Link href={`/jobs/${props.data.slug}`} className="uppercase bg-cyan-500 hover:bg-cyan-600 text-white text-sm hover:text-white border cursor-pointer p-2 rounded-md">find out more</Link>
           </div>
           <div className="posted-date flex absolute w-full left-0 p-3 bottom-0 border-t border-bg-white">
-            <div className="text-sm flex w-full items-center"><strong>Posted on :</strong> {dateRender(props.data.postedOn)}
+            <div className="text-sm flex w-full items-center text-gray-600"><strong>Posted on :</strong> {dateRender(props.data.postedOn)}
                {isAdmin ? <CardButtons handleDeleteJob={() => deleteJob(props.data.slug)} handleUpdateJob={updateJobDetails}/> : null}
             </div>
           </div>
