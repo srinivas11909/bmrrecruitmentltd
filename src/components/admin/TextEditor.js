@@ -1,12 +1,12 @@
 "use client"
 import dynamic from 'next/dynamic'; 
 import { useState } from 'react';
-import ReactQuill from 'react-quill';
+//import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // Import styles
 import "./TextEditor.css"
 
 
-//const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 const TextEditor = ({content='', onContentChange}) => {
     

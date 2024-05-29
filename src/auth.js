@@ -1,10 +1,6 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-// import { User } from "./model/user-model";
-// import bcrypt from "bcryptjs";
-
-
 export const {
     handlers: { GET, POST },
     auth,
@@ -15,7 +11,7 @@ export const {
       strategy: 'jwt',
     },
     pages: {
-        signIn: "/admin/login",
+        signIn: "/admin",
       },
     providers: [
         CredentialsProvider({

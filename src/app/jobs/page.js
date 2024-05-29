@@ -16,7 +16,7 @@ export default async function Jobs(){
          </div> 
          <div className="container mx-auto p-3 sm:p-0">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 md:gap-3 lg:gap-3 gap-3 mb-10 mt-10">
-                {jobs.map((item,index) => <Card data={item}/>)}
+                {jobs.map((item,index) => <Card data={item} key={index}/>)}
             </div>
 
          </div>

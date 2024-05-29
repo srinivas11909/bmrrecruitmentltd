@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useEffect, useRef } from 'react';
 
 export default function Client({secInfo, className}){
-    console.log(secInfo)
     const imageRef = useRef(null);
 
     useEffect(() => {

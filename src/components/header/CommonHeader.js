@@ -5,7 +5,6 @@ import AdminHeader from "./AdminHeader";
 
 export default function CommonHeader() {
     const pathname = usePathname()
-    console.log(pathname)
     const isAdminRoute = pathname.startsWith("/admin")
     return <>
        {isAdminRoute ? null : <Headers />}

@@ -2,8 +2,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import "./Navigation.css"
 export default function Navigation({sticky, screenSize,isOpen, onClick}){
-    console.log(isOpen)
-    console.log(screenSize)
     const navItems = [
         {
             linkName: "About Us",
@@ -23,7 +21,6 @@ export default function Navigation({sticky, screenSize,isOpen, onClick}){
         }
     ] 
     const router = usePathname();
-    console.log(router)
 
     return <>
        {/* <div className="top-header flex justify-end p-2 lg:px-12">

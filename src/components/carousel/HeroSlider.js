@@ -35,7 +35,7 @@ export default function HeroSlider() {
       fadeEffect={{ crossFade: true }}
       loop={true}
       grabCursor={true}
-      loopedSlides={slides.length}
+      loopedslides={slides.length}
       slidesPerView={1}
       modules={[EffectFade, Autoplay]}
     >

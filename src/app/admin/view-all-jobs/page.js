@@ -17,10 +17,9 @@ export default async function ViewAllJobs(){
     }
     return <>
         <Dashboard title={"srini"}>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 md:gap-3 lg:gap-3 gap-3">
-              {getAllJobs.length > 0 ? renderJobCard() : <div className=""> Add jobs</div>}
-        </div>
-
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 md:gap-3 lg:gap-3 gap-3">
+                {getAllJobs.length > 0 ? renderJobCard() : <div className=""> Add jobs</div>}
+            </div>
         </Dashboard>  
     </>
 }

@@ -31,6 +31,7 @@ export default function EditJob({data, onClose, params}) {
             await updateJob(fullData)
             alert("Job details updated successfully");
             onClose()
+            router.refresh();
             
         }catch(error){
             console.error("Error adding job:", error.message);
@@ -40,7 +41,7 @@ export default function EditJob({data, onClose, params}) {
     }
     const updateJob = async (formData) => {
         try {
-          await fetch(`${rocess.env.NEXT_PUBLIC_API_BASE_URL}/api/jobs/${data.slug}`, {
+          await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/jobs/${data.slug}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
@@ -51,7 +52,6 @@ export default function EditJob({data, onClose, params}) {
             throw new Error('Failed to update job');
           }
           router.push("/admin/view-all-jobs");
-          router.refresh();
         } catch (error) {
           console.error(error);
         }
