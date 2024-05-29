@@ -10,7 +10,6 @@ export default async function ViewAllJobs(){
     }
 
     const getAllJobs = await fetchJobs()
-   // console.log(getAllJobs)   
     const renderJobCard = () => {
         return getAllJobs.map((item, index) => {
             return <Card data={item} key={index} isAdmin={true}/>
