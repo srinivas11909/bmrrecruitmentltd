@@ -1,3 +1,39 @@
-.main-header{
-    background-color: #a49832;
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
 }
+.top-neg{
+    margin-top: -100px;
+    transition: all .25s linear;
+}
+.animated {
+    animation-duration: 1.25s
+}
+.fadeIn {
+    animation-name: fadeIn
+}
+
+/* HamburgerMenu.module.css */
+
+
+  .hamburgerButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .icon {
+    transition: transform 0.3s ease; /* Smooth transition for transform property */
+    width: 30px;
+  }
+  /* Rotate the cross icon when menu is open */
+  .open {
+    transform: rotate(90deg); 
+  }
+  

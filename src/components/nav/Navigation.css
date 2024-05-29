@@ -1,0 +1,54 @@
+/* components/HamburgerMenu.module.css */
+
+.hamburger-menu {
+    position: relative;
+  }
+  
+  .hamburger-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .line {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: black;
+    margin: 5px 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+  }
+  
+  .menu a:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Rotate the lines for the close icon */
+  .hamburger-menu.open .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger-menu.open .line:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger-menu.open .line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+  
