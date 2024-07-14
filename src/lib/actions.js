@@ -4,6 +4,8 @@ import { dbConnect } from "@/utils/db";
 import { NextResponse } from "next/server";
 import Job from "@/models/Job";
 import { signIn, signOut } from "@/auth";
+import { revalidatePath } from "next/cache";
+
 
 
  export const addJob = async (formData) => {
@@ -24,14 +26,16 @@ export async function doLogout() {
 }
 
 export async function dbConnectForLogin(formData) {
-
   try {
     const response = await signIn("credentials", {
       username: formData.get("username"),
       password: formData.get("password"),
       redirect: false,
     });
-    if(!response.ok){
+    if (response.ok) {
+      // Redirect to the admin page upon successful login
+      revalidatePath("/admin");
+    } else {
       console.error(response.error);
     }
     return response;

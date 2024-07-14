@@ -1,11 +1,11 @@
-"use client"
+//"use client"
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 //import { signIn} from "@/auth";
 import { dbConnectForLogin } from "@/lib/actions";
 
-export default  function LoginPage() {
+export default function LoginPage() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -21,7 +21,9 @@ export default  function LoginPage() {
                 console.error(response.error);
                 setError(response.error.message);
             } else {
-                router.push("/admin");
+                alert("Sucessfully logged in")
+                //router.push("/admin");
+                window.location.reload()
             }
         } catch (e) {
             console.error(e);
@@ -59,7 +61,7 @@ export default  function LoginPage() {
         <div className="z-10 w-full max-w-md overflow-hidden rounded-2xl border border-gray-100 shadow-xl">
             <div className="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center sm:px-16">
                 <h3 className="text-xl font-semibold">Sign in</h3>
-                <div>{error}</div>
+                <div className="text-red-700">{error}</div>
             </div>
             <form className="flex flex-col space-y-4 bg-gray-50 px-4 py-8 sm:px-16" onSubmit={handleSubmit}>
                     <div className="mb-3">
@@ -68,7 +70,7 @@ export default  function LoginPage() {
         onChange={(e) => setUsername(e.target.value)} />
                     </div>
                     <div className="mb-3">
-                        <label className="block text-xs text-gray-600 uppercase" htmlFor="password">username</label>
+                        <label className="block text-xs text-gray-600 uppercase" htmlFor="password">Password</label>
                         <input type="password" className="mt-1 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-black focus:outline-none focus:ring-black sm:text-sm" placeholder="Enter your Password" name="password" value={password}
         onChange={(e) => setPassword(e.target.value)} />
                     </div>

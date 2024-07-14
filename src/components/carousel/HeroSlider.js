@@ -41,7 +41,7 @@ export default function HeroSlider() {
     >
      {slides.map((item, index) => {
         return <SwiperSlide key={index}>
-         <div className='flex items-center justify-center px-4 flex-col min-h-96 bg-indigo-400'>
+         <div className='flex items-center justify-center px-4 flex-col min-h-96 bg-indigo-800'>
             <div className='lg:max-w-5xl text-center py-16'>
                 <div className='text-2xl md:text-3xl lg:text-5xl text-white font-bold mb-7 uppercase font-sans'>{item.title}</div>
                 <div className='text-4xl md:text-5xl lg:text-7xl text-white font-semibold uppercase font-mono'>{item.description}</div>

@@ -10,9 +10,9 @@ const Modal = ({ isOpen, onClose, title, children }) => {
 
   return (
     <div className="modalOverlay" onClick={onClose}>
-      <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-        <div className='header flex sticky top-0 bg-shite border-b shadow-md'>
-           {title}
+      <div className="modalContent w-11/12 lg:w-9/12" onClick={(e) => e.stopPropagation()}>
+        <div className='header bg-lime-500 text-white font-bold flex sticky top-0 bg-shite border-b px-3 py-3'>
+           {title ? title : null}
            <button className="closeButton ml-auto p-3" onClick={onClose}><X /></button>
         </div>
   

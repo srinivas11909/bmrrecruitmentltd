@@ -11,6 +11,7 @@ export default async function Jobs(){
    const  fetchJobs = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/jobs`, {next: {revalidate: 10}})
     const jobs = await res.json()
+    jobs.sort((a, b) => new Date(b.postedOn) - new Date(a.postedOn));
     return jobs
    }
    

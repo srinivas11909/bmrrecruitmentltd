@@ -12,7 +12,7 @@ export const {
     },
     pages: {
         signIn: "/admin",
-      },
+    },
     providers: [
         CredentialsProvider({
             credentials: {        

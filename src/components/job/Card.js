@@ -48,7 +48,7 @@ export default function Card({isAdmin = false, ...props}){
      setIsModalOpen(true);
    }
     return <>
-       <div className="border boorder-gray-300 rounded-md shadow p-3 bg-gray-100 relative min-h-80">
+       <div className="border boorder-gray-300 rounded-md shadow p-3 bg-gray-100 relative min-h-80 hover:shadow-lg">
           <div className="">
             <Link href={`/jobs/${props.data.slug}`} className="text-base text-black font-semibold">{props.data.title} </Link>
           </div>
@@ -64,7 +64,7 @@ export default function Card({isAdmin = false, ...props}){
              </div>
           </div>
           <div className="desc mb-3" style={{height: "96px"}}>
-             <div dangerouslySetInnerHTML={markup} className="text-base truncate-text text-gray-600"></div>
+             <div dangerouslySetInnerHTML={markup} className="text-base line-clamp-4 text-gray-600"></div>
           </div>
           <div className="flex w-full absolute bottom-16">
             <Link href={`/jobs/${props.data.slug}`} className="uppercase bg-cyan-500 hover:bg-cyan-600 text-white text-sm hover:text-white border cursor-pointer p-2 rounded-md">find out more</Link>

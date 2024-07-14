@@ -4,6 +4,7 @@ import Navigation from "../nav/Navigation"
 import { usePathname} from "next/navigation";
 
 import "./header.css" 
+import Link from "next/link";
 export default function Headers(props){
     const[isSticky, setIsSticky] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -54,9 +55,9 @@ export default function Headers(props){
         <div className="bg-white shadow-md transition-all z-50">
           <header className={`main-header inset-x-0 top-0 z-50 bg-white ${isSticky ? ' fixed animated fadeIn top-0 border': ''}`}>
               <nav className="flex item-center justify-between items-center p-6 bg-white lg:px-12 relative">
-                 <a href="/" className="text-sm text-gray-800 uppercase font-bold">
+                 <Link href="/" className="text-sm text-gray-800 uppercase font-bold">
                     <span>BMR Recruitment Ltd</span>
-                 </a>
+                 </Link>
                  <div className="flex lg:hidden">
                     <button type="button" className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" onClick={toggleMenu}>
                         <span className="sr-only">Open main menu</span>
