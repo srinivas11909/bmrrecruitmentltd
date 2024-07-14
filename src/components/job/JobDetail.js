@@ -26,9 +26,9 @@ export default function JobDetail(props){
        const formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
        return formattedDate
     }
-    const handelModal = () => {
-        setIsModalOpen(true)
-    }
+    // const handelModal = () => {
+    //     setIsModalOpen(true)
+    // }
     return <>
         <div className="bg-lime-300 p-4 text-center mb-8" style={{height: "185px"}}>
             <h1 className="text-3xl font-semibold text-white uppercase">{data[0]["title"]}</h1>
@@ -53,11 +53,11 @@ export default function JobDetail(props){
                 </div>
 
             </div>
-            <Modal title="Apply Job" isOpen={isModalOpen} onClose={closeModal}  >
+            {/* <Modal title="Apply Job" isOpen={isModalOpen} onClose={closeModal}  >
                 <div className='px-3 py-3'> 
                     <ApplyJob  onClose={closeModal}/>
                 </div>
-            </Modal>
+            </Modal> */}
         </div>
 
     </>
