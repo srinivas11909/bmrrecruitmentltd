@@ -87,7 +87,7 @@ export async function POST(req) {
   }
 }*/
 
-/*import { NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import multer from 'multer';
 import path from 'path';
@@ -177,86 +177,86 @@ export async function POST(req, res) {
         console.error('Error sending email:', error);
         return NextResponse.json({ message: 'Failed to send email server!' }, { status: 500 });
     }
-}*/
-
-import { NextResponse } from 'next/server';
-import formidable from 'formidable';
-import nodemailer from 'nodemailer';
-import multer from 'multer';
-
-// Multer setup for file upload
-const upload = multer({ storage: multer.memoryStorage() });
-
-// Nodemailer transporter setup
-const transporter = nodemailer.createTransport({
-    service: 'gmail', // Update with your email service provider
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-    }
-});
-
-// Helper function to parse form data using formidable
-const parseForm = (req) => {
-    return new Promise((resolve, reject) => {
-        const form = new formidable.IncomingForm();
-        console.log(form)
-        form.parse(req, (err, fields, files) => {
-            if (err) return reject(err);
-            resolve({ fields, files });
-        });
-    });
-};
-
-// API route handler for POST requests
-export async function POST(req, res) {
-    try {
-        // Parse form data using formidable
-        const { fields, files } = await parseForm(req);
-
-        // Destructure form fields and uploaded file
-        const { name, email, contact, address, comments } = fields;
-        const uploadedFile = files.file;
-
-        // Ensure all required fields are provided
-        if (!name || !email || !contact || !address || !comments || !uploadedFile) {
-            return NextResponse.json({ message: 'All fields are required' }, { status: 400 });
-        }
-
-        // Validate file type (example: allow only PDF files)
-        if (uploadedFile.type !== 'application/pdf') {
-            return NextResponse.json({ message: 'Only PDF files are allowed' }, { status: 400 });
-        }
-
-        // Nodemailer attachments configuration
-        const mailOptions = {
-            from: process.env.EMAIL_USER,
-            to: process.env.EMAIL_USER, // Change recipient email as needed
-            subject: 'Job Application Submission',
-            text: `
-                Name: ${name}
-                Email: ${email}
-                Contact: ${contact}
-                Address: ${address}
-                Comments: ${comments}
-            `,
-            attachments: [
-                {
-                    filename: uploadedFile.name,
-                    content: uploadedFile.data, // Use the file buffer directly
-                    contentType: uploadedFile.type || 'application/octet-stream',
-                }
-            ]
-        };
-
-        // Send email using Nodemailer
-        await transporter.sendMail(mailOptions);
-
-        // Return success response
-        return NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 });
-
-    } catch (error) {
-        console.error('Error sending email:', error);
-        return NextResponse.json({ message: 'Failed to send email server!' }, { status: 500 });
-    }
 }
+
+// import { NextResponse } from 'next/server';
+// import formidable from 'formidable';
+// import nodemailer from 'nodemailer';
+// import multer from 'multer';
+
+// // Multer setup for file upload
+// const upload = multer({ storage: multer.memoryStorage() });
+
+// // Nodemailer transporter setup
+// const transporter = nodemailer.createTransport({
+//     service: 'gmail', // Update with your email service provider
+//     auth: {
+//         user: process.env.EMAIL_USER,
+//         pass: process.env.EMAIL_PASS
+//     }
+// });
+
+// // Helper function to parse form data using formidable
+// const parseForm = (req) => {
+//     return new Promise((resolve, reject) => {
+//         const form = new formidable.IncomingForm();
+//         console.log(form)
+//         form.parse(req, (err, fields, files) => {
+//             if (err) return reject(err);
+//             resolve({ fields, files });
+//         });
+//     });
+// };
+
+// // API route handler for POST requests
+// export async function POST(req, res) {
+//     try {
+//         // Parse form data using formidable
+//         const { fields, files } = await parseForm(req);
+
+//         // Destructure form fields and uploaded file
+//         const { name, email, contact, address, comments } = fields;
+//         const uploadedFile = files.file;
+
+//         // Ensure all required fields are provided
+//         if (!name || !email || !contact || !address || !comments || !uploadedFile) {
+//             return NextResponse.json({ message: 'All fields are required' }, { status: 400 });
+//         }
+
+//         // Validate file type (example: allow only PDF files)
+//         if (uploadedFile.type !== 'application/pdf') {
+//             return NextResponse.json({ message: 'Only PDF files are allowed' }, { status: 400 });
+//         }
+
+//         // Nodemailer attachments configuration
+//         const mailOptions = {
+//             from: process.env.EMAIL_USER,
+//             to: process.env.EMAIL_USER, // Change recipient email as needed
+//             subject: 'Job Application Submission',
+//             text: `
+//                 Name: ${name}
+//                 Email: ${email}
+//                 Contact: ${contact}
+//                 Address: ${address}
+//                 Comments: ${comments}
+//             `,
+//             attachments: [
+//                 {
+//                     filename: uploadedFile.name,
+//                     content: uploadedFile.data, // Use the file buffer directly
+//                     contentType: uploadedFile.type || 'application/octet-stream',
+//                 }
+//             ]
+//         };
+
+//         // Send email using Nodemailer
+//         await transporter.sendMail(mailOptions);
+
+//         // Return success response
+//         return NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 });
+
+//     } catch (error) {
+//         console.error('Error sending email:', error);
+//         return NextResponse.json({ message: 'Failed to send email server!' }, { status: 500 });
+//     }
+// }

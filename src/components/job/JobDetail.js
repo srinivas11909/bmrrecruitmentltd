@@ -49,14 +49,14 @@ export default function JobDetail(props){
                 <div dangerouslySetInnerHTML={markup} className="text-base text-zinc-800"></div>
                 </div>
                 <div className='mt-3'>
-                  <div className='lg:w-40 border border-indigo-600 hover:bg-indigo-600 text-indigo-600 hover:text-white rounded-md p-2 text-base cursor-pointer text-center font-semibold' onClick={handelModal}>Apply now</div>
+                  <div className='lg:w-40 border border-indigo-600 hover:bg-indigo-600 text-indigo-600 hover:text-white rounded-md p-2 text-base cursor-pointer text-center font-semibold' >Apply now</div>
                 </div>
 
             </div>
             {/* <Modal title="Apply Job" isOpen={isModalOpen} onClose={closeModal}  >
                 <div className='px-3 py-3'> 
                     <ApplyJob  onClose={closeModal}/>
-                </div>
+                </div>onClick={handelModal}
             </Modal> */}
         </div>
 
